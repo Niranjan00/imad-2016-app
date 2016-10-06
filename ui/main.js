@@ -10,7 +10,7 @@
 //     span.innerHTML = counter.toString();
 // };
 
-var x = document.getElementById("text");
+var x = document.getElementById("gate");
 
 x.innerHTML = "new value";
 
