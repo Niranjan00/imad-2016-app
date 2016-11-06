@@ -98,7 +98,7 @@ app.get('/', function (req, res) {
 var pool = new Pool('config');
 app.get('/test-db',function(req,res){
    //make a query
-   pool.query("SELECT * FROM posts",function(err,result){
+   pool.query("SELECT * FROM categories",function(err,result){
        if(err){
            res.status(500).send(err).toString();
        }else{
