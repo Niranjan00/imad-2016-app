@@ -122,6 +122,10 @@ app.get('/articles/:articleName',function(req,res){
 
 });
 
+app.get('/blog/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'blog', 'index.html'));
+});
+
 app.get('/blog/css/bootstrap.min.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'blog/css', 'bootstrap.min.css'));
 });
