@@ -64,12 +64,12 @@ app.get('/', function (req, res) {
 
 function hash(input,salt){
     // creationg a hash 
-    var hashed = crypto.pbkdf2Sync(input,salt,10000,'sha512');
+    var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
     return hashed.toString('hex');
 }
 
 app.get('/hash/:input',function(req,res){
-    var hashString = hash(input, 'this-is-a-random-stirng');
+    var hashString = hash(req.params.input, 'this-is-a-random-stirng');
     res.send(hashString);
 })
 
