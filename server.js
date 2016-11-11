@@ -4,6 +4,8 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var cons = require('consolidate'),
+dust = require('dustjs-helpers');
 
 
 var config = {
@@ -17,7 +19,7 @@ var config = {
 
 
 var app = express();
-
+app.engine('dust',cons.dust);
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
