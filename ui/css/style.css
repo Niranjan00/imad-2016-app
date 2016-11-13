@@ -1,0 +1,111 @@
+
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+.row-content{
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge ;
+    min-height: 400px;
+}
+.row-footer{
+    background-color:  #121d1f;
+    color: #fff;
+    margin: 0px auto;
+    padding: 50px 0px 20px 0px;
+}
+.jumbotron{
+    margin: 0px auto;
+    padding: 70px 30px 0px 30px;
+    background: #7986CB;
+    color: floralwhite;
+}
+.address{
+    font-size: 80%;
+    margin: 0px auto;
+    color: #0f0f0f;
+}
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-inverse {
+     background: #303F9F;
+     
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background: #1A237E;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+ .navbar-inverse .navbar-nav > .open > a:hover,
+ .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background: #1A237E;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+    background-color: #303F9F;
+    color:#eeeeee;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
+    color:#000000;
+}
+.signIn-form{
+    padding: 0px;
+    margin: 7px;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+   
+    padding: 10px;
+}
+
+.affix {
+    top:100px;
+}
+
+.sidebar-module{
+    margin-left: 5px;
+   
+}
+.contain{
+     margin-left: 5px;
+     margin-right: 5px;
+    
+     background: #F0FFF0;
+}
+
+.sidebar-left{
+    border: black solid 1px;
+}
+
+#academics{
+    border: 1px solid #ddd;
+}
+
+#technical{
+    border: 1px solid #ddd;
+}
+
+#personal{
+    border: 1px solid #ddd;
+    background: #7B68EE;
+}
+
+.address{
+    color: #fff;
+    font-size: 17px;
+}
+
