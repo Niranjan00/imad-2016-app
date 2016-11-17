@@ -22,7 +22,60 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
+// profile page start
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/css/bootstrap.min.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/css', 'bootstrap.min.css'));
+});
+
+app.get('/css/bootstrap-theme.min.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/css', 'bootstrap-theme.min.css'));
+});
+app.get('/css/font-awesome.min.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/css', 'font-awesome.min.css'));
+});
+
+app.get('/css/bootstrap-social.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/css', 'bootstrap-social.css'));
+});
+app.get('/js/bootstrap.min.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/js', 'bootstrap.min.js'));
+});
+
+app.get('/css/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/css', 'style.css'));
+});
+
+app.get('/fonts/glyphicons-halflings-regular.ttf ', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/fonts', 'glyphicons-halflings-regular.ttf '));
+});
+
+app.get('/fonts/glyphicons-halflings-regular.eot  ', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/fonts', 'glyphicons-halflings-regular.eot'));
+});
+
+app.get('/fonts/glyphicons-halflings-regular.svg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/fonts', 'glyphicons-halflings-regular.svg'));
+});
+
+app.get('/fonts/glyphicons-halflings-regular.woff', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/fonts', 'glyphicons-halflings-regular.woff'));
+});
+app.get('/fonts/glyphicons-halflings-regular.woff', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/fonts', 'glyphicons-halflings-regular.woff'));
+});
+app.get('/fonts/fontawesome-webfont.svg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/fonts', 'fontawesome-webfont.svg'));
+});
+app.get('/fonts/fontawesome-webfont.woff', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/fonts', 'fontawesome-webfont.woff'));
+});
+
+// profile page ends 
 
 function createTemplate(data){
     var title = data.title;
