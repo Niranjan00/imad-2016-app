@@ -77,6 +77,54 @@ app.get('/fonts/fontawesome-webfont.woff', function (req, res) {
 
 // profile page ends 
 
+
+// images registration start 
+app.get('/images/niru.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'niru.jpg'));
+});
+
+app.get('/images/server.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'server.png'));
+});
+app.get('/images/phone.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'phone.png'));
+});
+app.get('/images/mail.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'mail.png'));
+});
+
+app.get('/images/web.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'web.png'));
+});
+app.get('/images/java.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'java.png'));
+});
+app.get('/images/setting.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'setting.png'));
+});
+app.get('/images/school.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'school.png'));
+});
+app.get('/images/college.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'college.png'));
+});
+app.get('/images/fb.PNG', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'fb.PNG'));
+});
+app.get('/images/gp.PNG', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'gp.PNG'));
+});
+
+app.get('/images/twitter.PNG', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'twitter.PNG'));
+});
+
+app.get('/images/lkn.PNG', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'lkn.PNG'));
+});
+
+// images registration ends
+
 function createTemplate(data){
     var title = data.title;
     var heading = data.heading;
