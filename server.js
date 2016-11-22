@@ -253,16 +253,16 @@ app.get('/articles/:articleName',function(req,res){
 
 });
 
+// blog registration
+
 app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
+app.get('/css/blog-home.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/css', 'blog-home.css'));
+});
 
-app.get('/blog/css/bootstrap.min.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'blog/css', 'bootstrap.min.css'));
-});
-app.get('/blog/css/blog.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'blog/css', 'blog.css'));
-});
+//
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
