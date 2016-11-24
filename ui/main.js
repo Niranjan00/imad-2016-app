@@ -27,7 +27,7 @@ function loadArticles () {
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
 
-var text = document.getElementByID('abc');
+var text = document.getElementById('abc');
 text.onclick = function(){
     var a = "this is working ";
     
