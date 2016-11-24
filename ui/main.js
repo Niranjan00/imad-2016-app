@@ -8,18 +8,13 @@ function loadArticles () {
                 var articleData = JSON.parse(this.responseText);
                 var content = '';
                 for (var i=0; i< articleData.length; i++) {
-                     content += `<div class="container">
-                                <div class="row">
-                               <div class="post-preview">
+                     content += `
                                 <a href="/${articleData[i].title}">
                                 <h2 class="post-title">
                                      ${articleData[i].heading}
                                 </h2>
                                 </a>
-                    <p class="post-meta">Posted by <a href="/about.html">${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>
-                </div>
-                </div>
-                </div>`;
+                    <p>Posted by ${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>`;
                 }
                articles.innerHTML = content;
             } else {
