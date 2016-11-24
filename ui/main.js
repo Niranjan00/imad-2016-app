@@ -26,11 +26,3 @@ function loadArticles () {
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
-
-var text = document.getElementById('abc');
-text.onclick = function(){
-    
-    var a = document.getElementById('b');
-    
-    a.innerHTML = "Testing data" ;
-}
