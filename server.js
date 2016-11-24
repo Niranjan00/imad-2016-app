@@ -253,6 +253,19 @@ app.get('/articles/:articleName',function(req,res){
 
 });
 
+app.get('/get-category', function (req, res) {
+   // make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM category', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   }); 
+});
+
+
 app.get('/get-articles', function (req, res) {
    // make a select request
    // return a response with the results
@@ -265,17 +278,6 @@ app.get('/get-articles', function (req, res) {
    }); 
 });
 
-app.get('/get-category', function (req, res) {
-   // make a select request
-   // return a response with the results
-   pool.query('SELECT * FROM category', function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send(JSON.stringify(result.rows));
-      }
-   }); 
-});
 
 // blog registration
 
