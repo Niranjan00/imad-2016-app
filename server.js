@@ -227,9 +227,9 @@ res.status(403).send('username/password is invalid');
 });
 
 var pool = new Pool(config);
-app.get('/test-db',function(req,res){
+app.get('/test-article',function(req,res){
    //make a query
-   pool.query("SELECT * FROM categories",function(err,result){
+   pool.query("SELECT * FROM article",function(err,result){
        if(err){
            res.status(500).send(err).toString();
        }else{
