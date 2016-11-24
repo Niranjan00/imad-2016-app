@@ -37,7 +37,7 @@ function loadCategory() {
             if (request.status === 200) {
                 var categoryData = JSON.parse(this.responseText);
                 var content = '<ul>';
-                for (var i=0; i< articleData.length; i++) {
+                for (var i=0; i< categoryData.length; i++) {
                      content += `<li>
                                 <a href="">
                                     <h4>${categoryData[i].name}</h4>
@@ -46,7 +46,7 @@ function loadCategory() {
                content += "</ul>"
                categories.innerHTML = content;
             } else {
-                articles.innerHTML('Oops! Could not load all category!')
+                categories.innerHTML('Oops! Could not load all category!')
             }
         }
     };
