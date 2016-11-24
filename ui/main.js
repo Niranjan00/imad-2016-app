@@ -39,13 +39,13 @@ function loadCategory() {
                 var content = '<ul>';
                 var categoryData = JSON.parse(this.responseText);
                 for (var i=0; i< categoryData.length; i++) {
-                    //  content += `<li>
-                    //             <a href="">
-                    //                 <h4>${categoryData[i].name}</h4>
-                    //             </a></li>`;
+                     content += `<li>
+                                <a href="">
+                                    <h4>${categoryData[i].name}</h4>
+                                </a></li>`;
                 }
                content += "</ul>"
-               categories.innerHTML = Hello;
+               categories.innerHTML = content;
             } else {
                 categories.innerHTML('Oops! Could not load all category!')
             }
