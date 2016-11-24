@@ -28,5 +28,30 @@ function loadArticles () {
     request.open('GET', '/get-articles', true);
     request.send(null);
 }
+
+function loadCategory() {
+        var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var categories = document.getElementById('category');
+            if (request.status === 200) {
+                var categoryData = JSON.parse(this.responseText);
+                var content = '';
+                for (var i=0; i< articleData.length; i++) {
+                     content += `
+                                <a href="">
+                                    <h4>${categoryData[i].name}</h4>
+                                </a>`;
+                }
+               categories.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all category!')
+            }
+        }
+    };
+    
+    request.open('GET', '/get-category', true);
+    request.send(null);
+}
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
