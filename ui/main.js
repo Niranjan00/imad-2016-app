@@ -1,14 +1,35 @@
-// Conter updated code
-
-var button = document.getElementById("counter");
-var counter = 0 ;
-
-button.onclick = function(){
+function loadArticles () {
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('articles');
+            if (request.status === 200) {
+                var articleData = JSON.parse(this.responseText);
+                var content = '';
+                for (var i=0; i< articleData.length; i++) {
+                     content += `<div class="container">
+                                <div class="row">
+                               <div class="post-preview">
+                                <a href="/${articleData[i].title}">
+                                <h2 class="post-title">
+                                     ${articleData[i].heading}
+                                </h2>
+                                </a>
+                    <p class="post-meta">Posted by <a href="/about.html">${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>
+                </div>
+                </div>
+                </div>`;
+                }
+               articles.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all articles!')
+            }
+        }
+    };
     
-    counter = counter + 1;
-    var span = document.getElementById("count");
-    span.innerHTML = counter.toString();
-};
-
-
-
+    request.open('GET', '/get-articles', true);
+    request.send(null);
+}
+// Now this is something that we could have directly done on the server-side using templating too!
+loadArticles();
