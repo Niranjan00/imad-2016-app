@@ -29,7 +29,8 @@ loadArticles();
 
 var text = document.getElementById('abc');
 text.onclick = function(){
-    var a = "this is working ";
     
-    text.innerHTML = a ;
+    var a = document.getElementById('b');
+    
+    a.innerHTML = "Testing data" ;
 }
