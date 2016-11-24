@@ -31,12 +31,12 @@ function loadArticles () {
 
 function loadCategory() {
         var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
+        request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var categories = document.getElementById('category');
             if (request.status === 200) {
-                var categoryData = JSON.parse(this.responseText);
                 var content = '<ul>';
+                var categoryData = JSON.parse(this.responseText);
                 for (var i=0; i< categoryData.length; i++) {
                      content += `<li>
                                 <a href="">
