@@ -27,7 +27,7 @@
         // Make the request
         var username = document.getElementById('name').value;
         var password = document.getElementById('password').value;
-        console.log(username);
+        console.log(name);
         console.log(password);
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
