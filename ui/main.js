@@ -25,9 +25,9 @@
         };
         
         // Make the request
-        var username = document.getElementById('name').value;
+        var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        console.log(name);
+        console.log(username);
         console.log(password);
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
@@ -68,6 +68,33 @@ function loadArticles () {
     };
     
     request.open('GET', '/get-articles', true);
+    request.send(null);
+}
+// print logged in information of user
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
+}
+
+
+// login function 
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
+            }
+        }
+    };
+    
+    request.open('GET', '/check-login', true);
     request.send(null);
 }
 
