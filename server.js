@@ -22,6 +22,136 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
+var pool = new Pool(config);
+app.get('/test-article',function(req,res){
+   //make a query
+   pool.query("SELECT * FROM article",function(err,result){
+       if(err){
+           res.status(500).send(err).toString();
+       }else{
+           res.send(JSON.stringify(result.rows));
+       }
+   });
+});
+
+
+app.get('/articles/:articleName',function(req,res){
+  pool.query("SELECT * FROM article WHERE title = $1 ", [req.params.articleName], function(err , result){
+       if(err){
+           res.status(500).send(err.toString());
+       }else if(result.rows.length === 0){
+           res.status(404).send('Article not found');
+       }else{
+           var articleData = result.rows[0];
+           res.send(createTemplate(articleData));
+       }
+   } );
+
+});
+
+app.get('/category', function (req, res) {
+   // make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM category', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   }); 
+});
+
+
+app.get('/get-articles', function (req, res) {
+   // make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM article ', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   }); 
+});
+
+app.get('/hash/:input', function(req, res) {
+   var hashedString = hash(req.params.input, 'this-is-some-random-string');
+   res.send(hashedString);
+});
+
+app.post('/create-user', function (req, res) {
+   // username, password
+   // {"username": "tanmai", "password": "password"}
+   // JSON
+   var username = req.body.username;
+   var password = req.body.password;
+   var salt = crypto.randomBytes(128).toString('hex');
+   var dbString = hash(password, salt);
+   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send('User successfully created: ' + username);
+      }
+   });
+});
+
+app.post('/login', function (req, res) {
+   var username = req.body.username;
+   var password = req.body.password;
+   
+   pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          if (result.rows.length === 0) {
+              res.status(403).send('username/password is invalid');
+          } else {
+              // Match the password
+              var dbString = result.rows[0].password;
+              var salt = dbString.split('$')[2];
+              var hashedPassword = hash(password, salt); // Creating a hash based on the password submitted and the original salt
+              if (hashedPassword === dbString) {
+                
+                // Set the session
+                req.session.auth = {userId: result.rows[0].id};
+                // set cookie with a session id
+                // internally, on the server side, it maps the session id to an object
+                // { auth: {userId }}
+                
+                res.send('credentials correct!');
+                
+              } else {
+                res.status(403).send('username/password is invalid');
+              }
+          }
+      }
+   });
+});
+
+app.get('/check-login', function (req, res) {
+   if (req.session && req.session.auth && req.session.auth.userId) {
+       // Load the user object
+       pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(result.rows[0].username);    
+           }
+       });
+   } else {
+       res.status(400).send('You are not logged in');
+   }
+});
+
+app.get('/logout', function (req, res) {
+   delete req.session.auth;
+   res.status(200).send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
+});
+
+
+
+
 // profile page start
 
 app.get('/', function (req, res) {
@@ -225,59 +355,6 @@ res.status(403).send('username/password is invalid');
 }
 });
 });
-
-var pool = new Pool(config);
-app.get('/test-article',function(req,res){
-   //make a query
-   pool.query("SELECT * FROM article",function(err,result){
-       if(err){
-           res.status(500).send(err).toString();
-       }else{
-           res.send(JSON.stringify(result.rows));
-       }
-   });
-});
-
-
-app.get('/articles/:articleName',function(req,res){
-  pool.query("SELECT * FROM article WHERE title = $1 ", [req.params.articleName], function(err , result){
-       if(err){
-           res.status(500).send(err.toString());
-       }else if(result.rows.length === 0){
-           res.status(404).send('Article not found');
-       }else{
-           var articleData = result.rows[0];
-           res.send(createTemplate(articleData));
-       }
-   } );
-
-});
-
-app.get('/category', function (req, res) {
-   // make a select request
-   // return a response with the results
-   pool.query('SELECT * FROM category', function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send(JSON.stringify(result.rows));
-      }
-   }); 
-});
-
-
-app.get('/get-articles', function (req, res) {
-   // make a select request
-   // return a response with the results
-   pool.query('SELECT * FROM article ', function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send(JSON.stringify(result.rows));
-      }
-   }); 
-});
-
 
 // blog registration
 
