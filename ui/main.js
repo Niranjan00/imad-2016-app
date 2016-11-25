@@ -29,6 +29,7 @@ function loadArticles () {
     request.send(null);
 }
 
+// loading category
 function loadCategory() {
     
         var request = new XMLHttpRequest();
@@ -52,7 +53,7 @@ function loadCategory() {
         }
     };
     
-    request.open('GET', '/get-category', true);
+    request.open('GET', '/category', true);
     request.send(null);
 }
 // Now this is something that we could have directly done on the server-side using templating too!
