@@ -110,33 +110,6 @@ app.get('/logout', function (req, res) {
    res.status(200).send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
-
-var pool = new Pool(config);
-app.get('/get-articles', function (req, res) {
-   // make a select request
-   // return a response with the results
-   pool.query('SELECT * FROM article ', function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send(JSON.stringify(result.rows));
-      }
-   }); 
-});
-
-app.get('/category', function (req, res) {
-   // make a select request
-   // return a response with the results
-   pool.query('SELECT * FROM category', function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send(JSON.stringify(result.rows));
-      }
-   }); 
-});
-
-
 // profile page start
 
 app.get('/', function (req, res) {
@@ -284,6 +257,34 @@ return htmlTemplate;
 app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
+
+var pool = new Pool(config);
+app.get('/get-articles', function (req, res) {
+   // make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM article ', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   }); 
+});
+
+app.get('/category', function (req, res) {
+   // make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM category', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   }); 
+});
+
+
+
 app.get('/css/blog-home.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/css', 'blog-home.css'));
 });
