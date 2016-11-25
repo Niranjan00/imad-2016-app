@@ -253,7 +253,7 @@ app.get('/articles/:articleName',function(req,res){
 
 });
 
-app.get('/get-category', function (req, res) {
+app.get('/category', function (req, res) {
    // make a select request
    // return a response with the results
    pool.query('SELECT * FROM category', function (err, result) {
