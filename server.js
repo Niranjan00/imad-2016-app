@@ -28,6 +28,16 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+// blog registration
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+});
+
+
 function hash (input, salt) {
     // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
@@ -136,10 +146,6 @@ app.get('/category', function (req, res) {
 });
 
 // profile page start
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
 
 app.get('/css/bootstrap.min.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/css', 'bootstrap.min.css'));
@@ -276,12 +282,6 @@ var htmlTemplate = `
 return htmlTemplate;
 }
 
-
-// blog registration
-
-app.get('/blog', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
-});
 
 app.get('/css/blog-home.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/css', 'blog-home.css'));
