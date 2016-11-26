@@ -1,6 +1,16 @@
 
 function loadLoginForm () {
-  // Submit username/password to login
+    var loginHtml = `
+        <h3>Login/Register to unlock awesome features</h3>
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" />
+        <br/><br/>
+        <input type="submit" id="login_btn" value="Login" />
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
+    
+    // Submit username/password to login
     var submit = document.getElementById('login_btn');
     submit.onclick = function () {
         // Create a request object
@@ -94,7 +104,6 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
-
 
 // loading articles 
 function loadArticles () {
