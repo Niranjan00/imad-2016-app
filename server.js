@@ -368,7 +368,7 @@ var htmlTemplate = `
             <div class="col-sm-9">
                 <h1>${title}</h1>
                 <h2>${heading}</h2>
-                <h4>${date}</h4>
+                <h4>${date.toString()}</h4>
                 <p>${content}</p>
             </div>
         </div>
