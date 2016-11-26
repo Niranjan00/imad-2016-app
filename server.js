@@ -310,30 +310,118 @@ function createTemplate(data){
     var content = data.content;
 
 var htmlTemplate = `
-   <html>
-    <head>
-        <title>${title} </title>
-        <meta name="viewport" content="width=device-width , initial-scale=1"> 
-         <link href="/ui/style.css" rel="stylesheet" />
-       
-    </head>
-    <body>
-    <div class="container">   
-        <div>
-            <a href="/">Home</a>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Niranjan Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/blog-home.css" rel="stylesheet">
+   
+</head>
+
+<body>
+
+    <!-- Navigation -->
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" 
+                    aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><P >NIRANJAN'S BLOG</P></a>
         </div>
-        <hr/>
-        <h3>
-            ${heading} 
-        </h3>
-        <div>
-            ${date.toDateString()}
+            <div id="navbar" class="navbar-collapse collapse navbar-right">
+               <ul class="nav navbar-nav">
+                <li class="active pull-left"><a href="/"><span class="glyphicon glyphicon-home"
+                         aria-hidden="true"></span>HOME</a></li>
+                       
+                </ul>
+               
+                </div> 
         </div>
-        <div>
-            ${content}
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <h1>${title}</h1>
+                <h2>${heading}</h2>
+                <h4>${date}</h4>
+                <p>${content}</p>
+            </div>
         </div>
-    </div>     
-    </body>
+    <!-- /.container -->
+	 <!-- Footer -->
+           <footer class="row-footer">
+        <div class="container">
+            <div class="row">             
+                
+                <div class="col-xs-12 col-sm-4 address">
+                    <h4>Contact</h4>
+                    <address >
+		              C-307B<br>
+		              Lajpat Nager, Shahibabad<br>
+		              Ghaziabad, UP<br>
+					  201005<br>
+		              <i class="fa fa-phone"></i>: +918802278266<br>
+		              <i class="fa fa-envelope"></i>: 
+                      <a href="mailto:http://gmail.com">niranjan.rdec@gmail.com</a>
+		           </address>
+                </div>
+                <div class="col-xs-12 col-sm-8 ">
+                    <div class="nav navbar-nav " style="padding: 40px 10px;">
+						<ul class="list-inline">
+							<li><a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a></li>
+							<li><a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a></li>
+							<li><a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a></li>
+							<li><a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+							<li><a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a></li>
+						</ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 ">
+                    <p style="padding:10px;"></p>
+                    <p align=center style="color:#fff;">Design & Developed by Niranjan Kumar || Contact +918802278266</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+     <script type="text/javascript" src="/ui/main.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+         });
+    </script>
+
+</body>
+
 </html>
 
 `;
