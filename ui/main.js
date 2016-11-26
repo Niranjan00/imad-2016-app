@@ -85,7 +85,7 @@ function loadLoginForm () {
 }
 
 function loadLoggedInUser (username) {
-    var loginArea = document.getElementById('loggedin_section');
+    var loginArea = document.getElementById('id="loggedin_area');
     loginArea.innerHTML = `
         <h3> Hi ${username}</h3>
         <a href="/logout">Logout</a>
