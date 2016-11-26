@@ -365,11 +365,22 @@ var htmlTemplate = `
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-9">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h1>${title}</h1>
                 <h2>${heading}</h2>
                 <h4>${date.toString()}</h4>
-                <p>${content}</p>
+                    <article>
+                         <div >
+                         <p>${content}</p>
+                         <hr/>
+                          <h2>Comments</h2>
+                          <div id="comment_form">
+                          </div>
+                          <div id="comments">
+                            <center>Loading comments...</center>
+                          </div>
+                      </div>
+                  </article>
             </div>
         </div>
     </div><br><br>
