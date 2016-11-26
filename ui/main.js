@@ -1,6 +1,7 @@
 
 function loadLoginForm () {
     var loginHtml = `
+                <h3>Login/Reister</h3>
                 <form>
                    <div class="form-group">
                         <input type="text" class="form-control" id="username" placeholder="User Name">
