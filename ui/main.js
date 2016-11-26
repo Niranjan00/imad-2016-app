@@ -146,6 +146,7 @@ loadCategory();
             if (request.status === 200) {
                 loadLoggedInUser(this.responseText);
             } else {
+                alert("you are not logged in ");
                 loadLoginForm();
             }
         }
