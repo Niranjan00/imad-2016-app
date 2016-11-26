@@ -351,8 +351,8 @@ var htmlTemplate = `
         </div>
             <div id="navbar" class="navbar-collapse collapse navbar-right">
                <ul class="nav navbar-nav">
-                <li class="active pull-left"><a href="/"><span class="glyphicon glyphicon-home"
-                         aria-hidden="true"></span>HOME</a></li>
+                <li class="active pull-left"><a href="/blog"><span class="glyphicon glyphicon-home"
+                         aria-hidden="true"></span> Blog HOME</a></li>
                        
                 </ul>
                
