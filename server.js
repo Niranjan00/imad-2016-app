@@ -23,14 +23,7 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
 
-// blog registration
-app.get('/blog', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
-});
 
 
 function hash (input, salt) {
@@ -204,6 +197,15 @@ app.get('/:articleName',function (req,res) {
     });
 });
 
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+// blog registration
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+});
 // profile page start
 
 app.get('/css/bootstrap.min.css', function (req, res) {
