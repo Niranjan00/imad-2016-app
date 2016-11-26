@@ -1,5 +1,6 @@
 
-    // Submit username/password to login
+function loadLoginForm () {
+  // Submit username/password to login
     var submit = document.getElementById('login_btn');
     submit.onclick = function () {
         // Create a request object
@@ -67,16 +68,17 @@
         register.value = 'Registering...';
     
     };
-    
-    function loadLoggedInUser (username) {
+}
+
+function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
-        <h3> Hi <i>${username.toUpperCase()}</i></h3>
+        <h3> Hi <i>${username}</i></h3>
         <a href="/logout">Logout</a>
     `;
 }
 
-    function loadLogin () {
+function loadLogin () {
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -84,8 +86,7 @@
             if (request.status === 200) {
                 loadLoggedInUser(this.responseText);
             } else {
-                alert("you are not logged in ");
-              //  loadLoginForm();
+                loadLoginForm();
             }
         }
     };
