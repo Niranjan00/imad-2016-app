@@ -128,7 +128,8 @@ function loadArticles () {
                                 </h2>
                                 
                                 </a>
-                    <p class="post-meta">Posted by <a href="/">${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>`;
+                    <p class="post-meta">Posted by <a href="/">${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>
+                    <hr/>`;
                 }
                articles.innerHTML = content;
             } else {
