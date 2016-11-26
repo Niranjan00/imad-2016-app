@@ -211,7 +211,7 @@ app.get('/css/bootstrap.min.css', function (req, res) {
 });
 
 app.get('/css/bootstrap-theme.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/css', 'bootstrap-theme.min.css'));
+  res.sendFile(path.join(__dirname, 'ui/css', 'bootstrap-theme.css'));
 });
 app.get('/css/font-awesome.min.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/css', 'font-awesome.min.css'));
