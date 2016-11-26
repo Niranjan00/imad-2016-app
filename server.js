@@ -375,40 +375,10 @@ var htmlTemplate = `
     </div><br><br>
     <!-- /.container -->
 	 <!-- Footer -->
-           <footer class="row-footer">
-        <div class="container">
-            <div class="row">             
-                
-                <div class="col-xs-12 col-sm-4 address">
-                    <h4>Contact</h4>
-                    <address >
-		              C-307B<br>
-		              Lajpat Nager, Shahibabad<br>
-		              Ghaziabad, UP<br>
-					  201005<br>
-		              <i class="fa fa-phone"></i>: +918802278266<br>
-		              <i class="fa fa-envelope"></i>: 
-                      <a href="mailto:http://gmail.com">niranjan.rdec@gmail.com</a>
-		           </address>
-                </div>
-                <div class="col-xs-12 col-sm-8 ">
-                    <div class="nav navbar-nav " style="padding: 40px 10px;">
-						<ul class="list-inline">
-							<li><a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a></li>
-							<li><a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a></li>
-							<li><a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a></li>
-							<li><a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-							<li><a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a></li>
-						</ul>
-                    </div>
-                </div>
-                <div class="col-xs-12 ">
-                    <p style="padding:10px;"></p>
-                    <p align=center style="color:#fff;">Design & Developed by Niranjan Kumar || Contact +918802278266</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+         <footer class="row-footer">
+                    <p class="text-center"> Copyright &copy Niranjan's Blog 2016 </p>        
+    
+          </footer>
      <script type="text/javascript" src="/ui/main.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
