@@ -372,6 +372,7 @@ var htmlTemplate = `
                 <p>${content}</p>
             </div>
         </div>
+    </div>
     <!-- /.container -->
 	 <!-- Footer -->
            <footer class="row-footer">
