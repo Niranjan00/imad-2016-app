@@ -1,4 +1,5 @@
 
+function loadLoginForm () {
   // Submit username/password to login
     var submit = document.getElementById('login_btn');
     submit.onclick = function () {
@@ -67,7 +68,7 @@
         register.value = 'Registering...';
     
     };
-
+}
 
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
