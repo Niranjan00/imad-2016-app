@@ -1,14 +1,6 @@
 
 function loadLoginForm () {
-    var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
-        <input type="text" id="username" placeholder="username" />
-        <input type="password" id="password" />
-        <br/><br/>
-        <input type="submit" id="login_btn" value="Login" />
-        <input type="submit" id="register_btn" value="Register" />
-        `;
-    document.getElementById('login_area').innerHTML = loginHtml;
+   
     
     // Submit username/password to login
     var submit = document.getElementById('login_btn');
@@ -163,6 +155,10 @@ function loadCategory() {
     request.open('GET', '/category', true);
     request.send(null);
 }
+
+// The first thing to do is to check if the user is logged in!
+loadLogin();
+
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
 
