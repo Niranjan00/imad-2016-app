@@ -85,7 +85,7 @@
                 loadLoggedInUser(this.responseText);
             } else {
                 alert("you are not logged in ");
-                loadLoginForm();
+              //  loadLoginForm();
             }
         }
     };
