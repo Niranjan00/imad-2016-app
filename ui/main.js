@@ -158,7 +158,7 @@ function loadCategory() {
                                     <h4>${categoryData[i].name}</h4>
                                 </a></li>`;
                 }
-               content += "</ul>"
+               content += "</ul>";
                categories.innerHTML = content;
             } else {
                 categories.innerHTML('Oops! Could not load all category!')
