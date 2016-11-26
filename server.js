@@ -368,7 +368,7 @@ var htmlTemplate = `
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h1>${title}</h1>
                 <h2>${heading}</h2>
-                <h4>${date.toString()}</h4>
+                <span>Posted by  <a href="#">${author}</a> on ${date.toDateString()}</span>
                     <article>
                          <div >
                          <p>${content}</p>
