@@ -1,6 +1,6 @@
 
 function loadLoginForm () {
-    var loginHtml = `
+ /*   var loginHtml = `
                 <h3>Login/Reister</h3>
                 
                    <div class="form-group">
@@ -12,7 +12,7 @@ function loadLoginForm () {
                      <button type="submit" class="btn btn-info" id="login_btn">Login</button>
                      <button type="submit" class="btn btn-info" id="register_btn">Register</button>
                
-        `;
+        `;    */
     document.getElementById('login_area').innerHTML = loginHtml;
     
     // Submit username/password to login
