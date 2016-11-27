@@ -2,7 +2,7 @@
 function loadLoginForm () {
     var loginHtml = `
                 <h3>Login/Reister</h3>
-                <form>
+                
                    <div class="form-group">
                         <input type="text" class="form-control" id="username" placeholder="User Name" required>
                    </div>
@@ -11,7 +11,7 @@ function loadLoginForm () {
                    </div>
                      <button type="submit" class="btn btn-info" id="login_btn">Login</button>
                      <button type="submit" class="btn btn-info" id="register_btn">Register</button>
-                </form>
+               
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
     
