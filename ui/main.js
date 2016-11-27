@@ -4,10 +4,10 @@ function loadLoginForm () {
                 <h3>Login/Reister</h3>
                 <form>
                    <div class="form-group">
-                        <input type="text" class="form-control" id="username" placeholder="User Name">
+                        <input type="text" class="form-control" id="username" placeholder="User Name" required>
                    </div>
                    <div class="form-group">
-                       <input type="password" class="form-control" id="password" placeholder="Password">
+                       <input type="password" class="form-control" id="password" placeholder="Password" required>
                    </div>
                      <button type="submit" class="btn btn-info" id="login_btn">Login</button>
                      <button type="submit" class="btn btn-info" id="register_btn">Register</button>
