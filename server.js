@@ -391,7 +391,7 @@ var htmlTemplate = `
                     <p class="text-center"> Copyright &copy Niranjan's Blog 2016 </p>        
     
           </footer>
-     <script type="text/javascript" src="article.js"></script>      
+     <script type="text/javascript" src="/ui/article.js"></script>      
      <script type="text/javascript" src="/ui/main.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
