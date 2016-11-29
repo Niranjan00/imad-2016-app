@@ -1,6 +1,6 @@
 
 function loadLoginForm () {
-    var loginHtml = `
+ /*   var loginHtml = `
         <h3>Login/Register </h3>
         <input type="text" id="username" placeholder="username" />
         <input type="password" id="password" />
@@ -8,7 +8,7 @@ function loadLoginForm () {
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
         `;
-    document.getElementById('login_area').innerHTML = loginHtml;
+    document.getElementById('login_area').innerHTML = loginHtml;   */
     
     // Submit username/password to login
     var submit = document.getElementById('login_btn');
