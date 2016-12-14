@@ -258,7 +258,7 @@ app.get('/fonts/fontawesome-webfont.woff', function (req, res) {
 
 // images registration start 
 app.get('/images/niru.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/images', 'niru.jpg'));
+  res.sendFile(path.join(__dirname, 'ui/images', 'niru_pic.jpg'));
 });
 
 app.get('/images/server.png', function (req, res) {
